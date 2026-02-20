@@ -1,13 +1,6 @@
-def main:
+import sys
 
-	# print to-do list
-
-	# ask for user action
-
-	# perform action
-
-	# re-loop
-
+def main():
 	todolist = []
 
 	while True:
@@ -17,11 +10,14 @@ def main:
 		action = input("Type A to add, R to remove, Q to quit: ").lower()
 
 		if action == "a":
-			# add
+			item = input("Enter item: ")
+			todolist.append(item)
 		elif action == "r":
-			# remove
+			num = int(input("Enter item number to remove: "))
+			# remove based off index = num - 1
+			todolist.pop(num - 1)
 		elif action == "q":
-			# quit
+			sys.exit()
 		else:
 			print("Improper usage.")
 			continue
