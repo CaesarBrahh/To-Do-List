@@ -24,12 +24,12 @@ def main():
 
 	return 0
 
-def display():
+def display(todolist):
 	print("To-Do List:")
 	i = 1
 	for item in todolist:
 		print(f"{i}.) {item}")
-		i++
+		i = i + 1
 
 if __name__ == "__main__":
 	main()
