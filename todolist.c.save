@@ -1,0 +1,70 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#define MAX_ITEMS_AMOUNT 99
+
+int main(void)
+{
+	char *list_items[MAX_ITEMS_AMOUNT] = {0};
+	int list_items_length = 0;
+
+	// while true loop start
+	while (1)
+	{
+		// print to-do list TUI
+		printf("TO-DO LIST:\n");
+		for (int i = 0; i < list_items_length; i++)
+		{
+			printf("%d.) %s\n", i+1, list_items[i]);
+		}
+
+		// ask user whether to add (a) or remove (r)
+		printf("Type \"a\" to Add or Type \"r\" to Remove: ");
+
+		// user intputs either a or r
+		char action; // declar action character variable
+		scanf("%c", &action); // store the character value typed by user into address location of action variable
+		int ch;
+		while ((ch = getchar()) != '\n' && ch != EOF) {}
+
+		// if a
+		if (action == 'a')
+		{
+			// ask user for text to add
+			printf("New item: ");
+			char item[99];
+			fgets(item, sizeof(item), stdin);
+			item[strcspn(item, "\n")] = '\0'; // remove trailing new line
+
+			// add text
+			list_items[list_items_length] = strdup(item); // allocate + copy
+			list_items_length++; // increment list_items_length by 1
+		}
+		// if r
+		else if (action == 'r')
+		{
+			// ask user which to remove based off the number
+			printf("Type which list number to remove: ");
+			int n;
+			scanf("%d", &n);
+			int ch2;
+			while ((ch2 = getchar()) != '\n' && ch2 != EOF) {}
+
+			// remove 
+			for (int i = 0; i < list_items_length-1; i++)
+			{
+				if (i >= n-1)
+				{
+					list_items[i] = list_items[i+1];
+				}
+			}
+			list_items[list_items_length-1] = "0";
+			list_items_length--;
+		}
+		else
+		{
+			return 0;
+		}	
+	}
+}
