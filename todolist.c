@@ -3,6 +3,7 @@
 #include <string.h>
 
 #define MAX_ITEMS_AMOUNT 99
+#define MAX_ITEM_LENGTH 19
 
 int display(char *todolist[], int todolist_length);
 
@@ -25,7 +26,22 @@ int main(void)
 		getchar();
 
 		// perform action
-
+		if (action == 'a')
+		{
+			// add
+		}
+		else if (action == "r")
+		{
+			// remove
+		}
+		else if (action == "q")
+		{
+			return 0;
+		}
+		else
+		{
+			printf("Improper Usage.");
+		}
 	}
 	// re-loop
 }
