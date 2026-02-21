@@ -4,5 +4,13 @@
 
 int main(void)
 {
-	
+	// define and instantiate list
+
+	// print to-do list
+
+	// ask for user action
+
+	// perform action
+
+	// re-loop
 }
