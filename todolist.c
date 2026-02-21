@@ -4,13 +4,13 @@
 
 #define MAX_ITEMS_AMOUNT 99
 
-int display(todolist, todolist_length);
+int display(char *todolist[], int todolist_length);
 
 int main(void)
 {
 	// define and instantiate list
 	char *todolist[MAX_ITEMS_AMOUNT];
-	todolist_length = 0;
+	int todolist_length = 0;
 
 	// Start loop
 	while (1)
@@ -21,11 +21,12 @@ int main(void)
 		// ask for user action
 
 		// perform action
+
 	}
 	// re-loop
 }
 
-int display(todolist, todolist_length)
+int display(char *todolist[], int todolist_length)
 {
 	printf("To-Do List:");
 	for (int i = 0; i < todolist_length; i++)

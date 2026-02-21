@@ -6,31 +6,15 @@ The program must:
 
 - Display a titled, numbered to-do list.
 - Allow the user to add items.
-- All the user to remove items by number.
+- Allow the user to remove items by number.
 - Continue running until the user chooses to quit.
 - Interact strictly through terminal input/output.
-
-The application does not require persistant storage.
 
 ## Tech Stack (Strict requirements)
 
 | Category | Technology | Version/Notes |
 | Language | Python | 3.10+ recommended |
 | Interface | Terminal (CLI) | stdin/stdout only |
-| Files | Single File | All logic must exist in one .py file |
-| Storage | In-Memory List | No file/database persistence |
-
-
-## Setup Commands
-
-No external dependencies required.
-
-Run the program using: 
-python todolist.py 
-
-## Project Structure
-
-Single file: todolist.py
 
 ## Core Features
 
@@ -73,69 +57,9 @@ Handle:
 
 Exit cleanly when user selects Quit.
 
-## Acceptance Criteria
+## Program Flow
 
-AC1 - Initial Display
-
-- Program starts by displaying:
-	- "To-Do List" (title)
-	- (Note that since the program has just started, we won't display any list items.)
-
-AC2 - Add Item
-
-- List is empty, then:
-- User adds "Walk dog," then:
-- List displays:
-	- "To-Do List" (title)
-	- "1. Walk dog"
-
-AC3 - Remove Item
-
-- Given list:
-	- "To-Do List"
-	- "1. A"
-	- "2. B"
-	- "3. C"
-- User removes item 2, then list displays:
-	- "To-Do List"
-	- "1. A"
-	- "2. C"
-
-AC4 - Invalid Remove Input
-
-- If
-	- User enters non-integer
-- Then:
-	- Print error message
-	- Do not modify list
-	- Continue loop / Re-prompt
-
-- If
-	- User enters number outside range
-- Then:
-	- Print error message
-	- Do not modify list
-	- Continue loop / Re-prompt
-
-AC5 - Invalid Menu Input
-
-- If
-	- User enters invalid menu choice
-- Then
-	- Print Invalid choice.
-	- Continue loop / Re-prompt
-
-AC6 - Quit
-
-- If
-	- User selects Quit
-- Then
-	- Program terminates window without error
-
-## Useful Documentation
-
-Python Lists: https://docs.python.org/3/tutorial/datastructures.html
-
-Python Input/Output: https://docs.python.org/3/tutorial/inputoutput.html
-
-Python Excpetion Handling: https://docs.python.org/3/tutorial/errors.html
+Display list --> Ask user for action (add, remove, or quit)
+	--> If user chooses to add --> ask user for item to add --> add to list --> continue loop
+	--> If user chooses to remove --> ask user for which item number to remove --> remove item from list --> continue lop
+	--> If user chooses to quit --> exit program
