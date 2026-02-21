@@ -19,6 +19,10 @@ int main(void)
 		display(todolist, todolist_length);
 
 		// ask for user action
+		printf("Type A to add, R to remove, Q to quit: ");
+		char action;
+		scanf("%c", &action);
+		getchar();
 
 		// perform action
 
@@ -28,7 +32,7 @@ int main(void)
 
 int display(char *todolist[], int todolist_length)
 {
-	printf("To-Do List:");
+	printf("To-Do List:\n");
 	for (int i = 0; i < todolist_length; i++)
 	{
 		printf("%i.) %s\n", i+1, todolist[i]);
