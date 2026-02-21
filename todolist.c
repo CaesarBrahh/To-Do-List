@@ -9,11 +9,14 @@ int main(void)
 	// define and instantiate list
 	char *list_items[MAX_ITEMS_AMOUNT];
 
-	// print to-do list
+	// Start loop
+	while (1)
+	{
+		// print to-do list
 
-	// ask for user action
+		// ask for user action
 
-	// perform action
-
+		// perform action
+	}
 	// re-loop
 }
