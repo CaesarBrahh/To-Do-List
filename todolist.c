@@ -37,7 +37,21 @@ int main(void)
 		}
 		else if (action == 'r')
 		{
-			// remove
+			printf("Which number item would you like to remove: ");
+			int n;
+			scanf("%i", &n);
+			getchar();
+
+			int index = n - 1;
+			free(todolist[index]);
+			for (int i = 0; i < todolist_length-1; i++)
+			{
+				if (i >= index)
+				{
+					todolist[i] = todolist[i+1];
+				}
+			}
+			todolist_length--;
 		}
 		else if (action == 'q')
 		{
@@ -48,7 +62,6 @@ int main(void)
 			printf("Improper Usage.\n");
 		}
 	}
-	// re-loop
 }
 
 int display(char *todolist[], int todolist_length)
