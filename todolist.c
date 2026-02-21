@@ -28,19 +28,24 @@ int main(void)
 		// perform action
 		if (action == 'a')
 		{
-			// add
+			todolist[todolist_length] = malloc(MAX_ITEM_LENGTH);
+			printf("New item: ");
+			fgets(todolist[todolist_length], MAX_ITEM_LENGTH, stdin);
+			int index = strcspn(todolist[todolist_length], "\n");
+			todolist[todolist_length][index] = '\0';
+			todolist_length++;
 		}
-		else if (action == "r")
+		else if (action == 'r')
 		{
 			// remove
 		}
-		else if (action == "q")
+		else if (action == 'q')
 		{
 			return 0;
 		}
 		else
 		{
-			printf("Improper Usage.");
+			printf("Improper Usage.\n");
 		}
 	}
 	// re-loop
